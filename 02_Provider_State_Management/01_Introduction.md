@@ -34,7 +34,7 @@ Why do we need state management?
 
 6. Before we create a file that is responsible for the logic inside the **providers** folder, let's first figure out where the logic in our app is right now.
 
-<img src="https://lh4.googleusercontent.com/eUjukQxmaBESf-CA_VmTNEJAc9D-Ppd5RpctRoWQLOTnTDm2yNBR4TdhaZvrMjv2ISgZ77u55Ja8iUMos7O-cD_UadiymORDR4Jg6Kxj4b1GrbtoSAEcvzqEy9AGoTXmpNYWxNhu" alt="img" style="zoom: 67%;" />
+![img](https://lh4.googleusercontent.com/eUjukQxmaBESf-CA_VmTNEJAc9D-Ppd5RpctRoWQLOTnTDm2yNBR4TdhaZvrMjv2ISgZ77u55Ja8iUMos7O-cD_UadiymORDR4Jg6Kxj4b1GrbtoSAEcvzqEy9AGoTXmpNYWxNhu)
 
 You will find the logic we developed before is in the **home_page.dart** file, under the **\_HomePageState**. Also, under the **build** method, we have the interface design inside the widget tree.
 
@@ -58,7 +58,8 @@ import 'package:flutter/material.dart';
 
 Inside the **home_page.dart**, cut the logic, and paste it inside the **NoteProvider** class.
 
-<img src="https://lh5.googleusercontent.com/yPb_FTtGX7F8nrAAldRmMOKq4OG0vo333f8YmOYZXtGjkbzsNdxVI1XYdVHEqq5Luv2rYau3AfwsyN7sh7af2KCacrsjCwMLui6GLftqfhNbNQ9kFzgBzqO2nJ9LzQMyW6quXFPH" alt="img" style="zoom:50%;" />
+![img](https://lh5.googleusercontent.com/yPb_FTtGX7F8nrAAldRmMOKq4OG0vo333f8YmOYZXtGjkbzsNdxVI1XYdVHEqq5Luv2rYau3AfwsyN7sh7af2KCacrsjCwMLui6GLftqfhNbNQ9kFzgBzqO2nJ9LzQMyW6quXFPH)
+
 
 > **Note:** an errors will appear in the code, but do not worry we will solve these problems
 
