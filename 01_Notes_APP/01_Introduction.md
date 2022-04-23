@@ -2,7 +2,10 @@
 
 In this example, we will create a note app. First, we will create this app by using the regular way that we learned before which is the **setState** way, and later we will learn how to use the **provider** state management.
 
-<img src="https://lh4.googleusercontent.com/EAvD9sEoDIgIxq0XwnPAWS_ZWmgkQLYlUZoWqsKTre2p33DrCOny9LPg3fyBsK7uLSd6nHPZtQyA8SgVv7woM6D7SsLhVpu5TR8u8yWltfaSgVcrYueOKgEwqf7sf4uSi97vnvTa" alt="img" style="zoom:33%;" /><img src="https://lh6.googleusercontent.com/5ImNIL1Uq4VNLqZdzI5hEswvtW8UgVKBpl97WLgBY9CUkksBCjFnQcqRB4MbYXVV0ycLAij6bXU895hM9G6mb2bP513Rbu_hhgdBS8Uql5wCPxHKkNVD5MufwGvoIe8txvOkWlXK" alt="img" style="zoom:33%;" />
+![img](https://lh4.googleusercontent.com/EAvD9sEoDIgIxq0XwnPAWS_ZWmgkQLYlUZoWqsKTre2p33DrCOny9LPg3fyBsK7uLSd6nHPZtQyA8SgVv7woM6D7SsLhVpu5TR8u8yWltfaSgVcrYueOKgEwqf7sf4uSi97vnvTa)
+
+![img](https://lh6.googleusercontent.com/5ImNIL1Uq4VNLqZdzI5hEswvtW8UgVKBpl97WLgBY9CUkksBCjFnQcqRB4MbYXVV0ycLAij6bXU895hM9G6mb2bP513Rbu_hhgdBS8Uql5wCPxHKkNVD5MufwGvoIe8txvOkWlXK)
+
 
 We will learn how to use:
 
