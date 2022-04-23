@@ -8,13 +8,13 @@ To display a floating button on the home screen, we can use the **FloatingAction
 2. Use the **floatingActionButton** named argument inside the **Scaffold** widget.
 3. This named argument takes a widget, so we will use the **FloatingActionButton** widget which will help us to display this named argument.
 
-<img src="https://lh5.googleusercontent.com/H5ogw5RLbv-JYe_NcblkOAuczOKV3riBGYfgC7xG04AeIJiEG6bmiA6ewr6920KfvsMaHccaQOFcZxCTJho4gPVuzjddruMiDdx-5uWbZtTfNlFAcdmIdEAjnATzfe1MCJYYi58L" alt="img" style="zoom:67%;" />
+![img](https://lh5.googleusercontent.com/H5ogw5RLbv-JYe_NcblkOAuczOKV3riBGYfgC7xG04AeIJiEG6bmiA6ewr6920KfvsMaHccaQOFcZxCTJho4gPVuzjddruMiDdx-5uWbZtTfNlFAcdmIdEAjnATzfe1MCJYYi58L)
 
 4. This widget takes two named arguments
 
 The first named argument is the **child**, and it takes a widget. This widget will display inside the Floating action button. So, we will pass an icon widget.
 
-<img src="https://lh6.googleusercontent.com/_Foqjf7A8bULDRrFuvhLoZgP7USMdUwwnviBso16QiN8F-Ds1vtfSAU_DgJd9Zz51t0yWK_aSx5v6VHcaVTiCJIGNgt8BYU1A4F3naXsG0T-rYf1zwgVpAnbjOWy4c0rnmvi-C8g" alt="img" style="zoom:67%;" />
+![img](https://lh6.googleusercontent.com/_Foqjf7A8bULDRrFuvhLoZgP7USMdUwwnviBso16QiN8F-Ds1vtfSAU_DgJd9Zz51t0yWK_aSx5v6VHcaVTiCJIGNgt8BYU1A4F3naXsG0T-rYf1zwgVpAnbjOWy4c0rnmvi-C8g)
 
 ```dart
 FloatingActionButton(
@@ -27,7 +27,7 @@ FloatingActionButton(
 
 The second named argument is **onPressed**, this named argument will take a function that is called when the button is tapped. Also, don’t forget to call the **addNote** function inside the noteProvider.
 
-<img src="https://lh3.googleusercontent.com/kYgvE5iLhBmlBHh0frEDRQrD8TBKLQFtVdNGNop_9sKl-2Su5NGICn_WyYBqnr3YPnjypdQaZ_BfimDLmr21R0EerCZqzuP6hvAFnuVN604j4L3-3y3uHOCR7a6YCETw9WVHvFCf" alt="img" style="zoom:67%;" />
+![img](https://lh3.googleusercontent.com/kYgvE5iLhBmlBHh0frEDRQrD8TBKLQFtVdNGNop_9sKl-2Su5NGICn_WyYBqnr3YPnjypdQaZ_BfimDLmr21R0EerCZqzuP6hvAFnuVN604j4L3-3y3uHOCR7a6YCETw9WVHvFCf)
 
 ```dart
 FloatingActionButton(
