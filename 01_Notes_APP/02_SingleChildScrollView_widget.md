@@ -6,8 +6,7 @@
 
 4. Inside our app, we will have two areas in the HomePage widget, the first area that on the top will have two **TextField** widgets (**Title** of the note & **Body** of the note), and we will use these **TextField** widgets to take input from the user. The second area on the bottom will have a **ListView** widget to display the notes.
 
-<img src="https://lh4.googleusercontent.com/eyARO3vkpJNBOpdcv1paNuO0L6XhGOiG6lopxz1aSAXwnbuWoFq1X32fRcGzEpoeidrXLxoJe1Kgz55YR6v5dtudyYMDops-aiyvnKx25dDNT0EMc59rzXNyXDVJChqfZ7vgEl9s" alt="img" style="zoom:67%;" />
-
+![img](https://lh4.googleusercontent.com/eyARO3vkpJNBOpdcv1paNuO0L6XhGOiG6lopxz1aSAXwnbuWoFq1X32fRcGzEpoeidrXLxoJe1Kgz55YR6v5dtudyYMDops-aiyvnKx25dDNT0EMc59rzXNyXDVJChqfZ7vgEl9s)
 
 
 First, we will add the first area that on the top, replace 
