@@ -36,3 +36,21 @@ IconButton(
 ```
 
 > **Note:** the **Provider.of** method needs a type, which is the provider that you created before and it also takes two arguments, the `context` and an optional boolean argument `listen`, when you are accessing data and do not want the widget to be rerendered you should set `listen` to `false`; then you can access all variables and methods that you created inside the provider file. So, in our case we import the **addNote** method; this method needs two named arguments (**title** & **body**), and we used the **TextEditingController.text** values.
+
+Alternatively, you can use `context.read` to access the provider. and make function calls, like this:
+
+```dart
+    context.read<NoteProvider>().addNote(
+      title: _titleTextEditingController.text,
+      body: _bodyTextEditingController.text,
+    );
+```
+
+Which is equivalent to:
+
+```dart
+    Provider.of<NoteProvider>(context, listen: false).addNote(
+      title: _titleTextEditingController.text,
+      body: _bodyTextEditingController.text,
+    );
+```
