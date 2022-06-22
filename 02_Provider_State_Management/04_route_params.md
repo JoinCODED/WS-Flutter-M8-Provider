@@ -1,4 +1,4 @@
-Install the `go_router` package and initiate your routes like we learned before:
+12. Install the `go_router` package and initiate your routes:
 
 ```dart
 void main() {
@@ -36,9 +36,9 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-22. Now we will learn how to use the route params mainly for the usage of flutter web.
+Now, we will learn how to use the route params mainly for the usage of flutter web.
 
-In your second route, `/note` add a param to the route by using a colon and the param that will help us identify each note object, we can use the **id** since it's a unique value!
+13. In your second route `/note`, add a param by using a colon and the param that helps us identify each note object. You can use the **id** since it is a unique value!
 
 ```dart
       GoRoute(
@@ -47,7 +47,7 @@ In your second route, `/note` add a param to the route by using a colon and the 
       ),
 ```
 
-23. The param will always be of type `String`, we need to parse it to an `int` to be able to use it.
+The param is always of type `String`, that is why we need to parse it to an `int` to be able to use it.
 
 ```dart
       GoRoute(
@@ -60,11 +60,9 @@ In your second route, `/note` add a param to the route by using a colon and the 
       ),
 ```
 
-We accessed the param using the `state.params` object and then pass the param name `noteId`.
+We accessed the param using the `state.params` object and passed the param named `noteId`.
 
-Now we need to create a function in our provider that takes an `id` and returns a note object:
-
-In your `note_provider.dart`:
+14. In the `note_provider.dart` file, create a function in the that takes an `id` and returns a note object.
 
 ```dart
   Note getNote({required int id}) {
@@ -72,7 +70,7 @@ In your `note_provider.dart`:
   }
 ```
 
-Back to your `main.dart` file, call our provider and call this function and pass the `id` to it:
+15. Call the provider and `getNote` function, and pass the `id` to it:
 
 ```dart
       GoRoute(
@@ -86,14 +84,14 @@ Back to your `main.dart` file, call our provider and call this function and pass
       ),
 ```
 
-Then like we learned before, we will create a variable in our `note_page` and generate a constructor:
+16. Create a variable in the `note_page` and generate a constructor:
 
 ```dart
   final Note note;
   const NotePage({Key? key, required this.note}) : super(key: key);
 ```
 
-And we will pass the note object to our page:
+17. Pass the note object to the `note_page` page:
 
 ```dart
       GoRoute(
@@ -107,7 +105,7 @@ And we will pass the note object to our page:
       ),
 ```
 
-Finally, in your `note_list_tile.dart` wrap your widget in an `InkWell` widget to get the `onTap` method and push the user to the `NotePage` and don't forget to include the **id** because it's our way of identifying which note the user wants!
+18. In your `note_list_tile.dart` file, wrap the widget in an `InkWell` to get the `onTap` method, push the user to the `NotePage`, and don't forget to include the **id**.
 
 ```dart
 class NoteListTile extends StatelessWidget {
@@ -132,13 +130,13 @@ class NoteListTile extends StatelessWidget {
 }
 ```
 
-Open the app in your browser using the following command:
+19. Open the app in your browser using the following command:
 
 ```dart
 flutter run -d chrome
 ```
 
-And add 3 notes then try to access them using the url by going to:
+20. Add 3 notes and try to access them using the url as shown below:
 
 `/note/1`
 `/note/2`
