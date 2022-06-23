@@ -1,85 +1,87 @@
-# **insert** & **removeAt** list methods
-
-5. Inside the **home_page.dart**, we will create a notes list that will store our notes inside it. So, replace the `// TODO: #2 note list` with
+3. Inside the **home_page.dart** file, replace the `// TODO: #2 note list` with the code below to create a list variable that stores the notes inside.
 
 ```dart
 var notes = [];
 ```
 
-6. After we created the **notes** list, we will need to create the **add** function, which will help us to insert a **note** object inside the **notes** list. So, replace the `// TODO: #3 add note function` with
+4. Replace `// TODO: #3 add note function` with the code below to create a function named **add** that helps us to insert a **note** object into the **notes** list.
 
 ```dart
  void addNote() {
 
-    // 1
+    // a
     var note = Note(
+      // b
       id: notes.isNotEmpty ? notes[notes.length - 1].id + 1 : 1,
+      //c
       title: _titleTextEditingController.text,
       body: _bodyTextEditingController.text,
     );
 
-    // 2
+    // d
     notes.insert(0, note);
 
 
-    // 3
+    // e
     setState(() {});
   }
 ```
 
-1. First, we need to create a **Note** object, and to do that we used the **Note** class that we created inside the **models** folder. Also, we provided its values by using the **\_titleTextEditingController** value & **\_bodyTextEditingController** value.
+> > a. We used the **Note** class that we created inside the **models** folder to create a **Note** object.
+> > b. We added a condition to check if the list is empty, if so, the id of the new note will be assigned to `1`, otherwise, it will take the id of the last element in the list increased by `1`.
+> > c. We assigned the title and body of the note to the **\_titleTextEditingController.text** & **\_bodyTextEditingController.text** value.
+> > d. We used the **insert** method which takes two arguments:
+> > The first argument is the position of the object inside the **note** list.
+> > The second argument is the object that you want to insert into the **notes** list, which is the **note** object that we created before.
+> > e. We used the **setState** method that came from the **StatefulWidget** to tell Flutter to rebuild its state.
 
-We need to generate an **id** for our note, the **id** should be unique for each note object, so we will take the last **id** in our list, then increase it by one, but first we will check if the list is empty, and if so, we will set the **id** to be equal to `1`.
-
-2. Here, we used the **insert** method which takes two arguments, the first argument is the position of the object that you insert inside the **notes** list. The second argument is the object that you want to insert into the **notes** list; and we passed the **note** object that we created before.
-3. After we inserted the note object inside the notes list, we need to tell Flutter to rebuild its state, and to do that we used the **setState** method that came from the **StatefulWidget**.
-
-4. After completing the additional logic, we need a way to display the notes; and for that, we will use the **ListView.builder** widget. So, replace the `// TODO: #4 Add ListView builder` with
+5. Replace the `// TODO: #4 Add ListView builder` with the code below to display the notes using the **ListView.builder** widget:
 
 ```dart
 ListView.builder(
+              // #a
+              itemCount: notes.length,
+              itemBuilder: (BuildContext context, int index) {
 
-                  // #1
-                  itemCount: notes.length,
-                  itemBuilder: (BuildContext context, int index) {
-
-                    // #2
-                    return NoteListTile(
-                      note: notes[index],
-                    );
-                  },
-                ),
+                // #b
+                return NoteListTile(
+                  note: notes[index],
+                );
+              },
+            ),
 ```
 
-1. The **ListView.builder** will need two important named arguments, the first one is **itemCount**, and here we take the length of the notes list since we will use this notes list to display its contents inside the **ListView.builder** widget.
-2. Here, we returned the **NoteListTile** widget for the **itemBuilder** method **ListView** widget. We created this tile widget inside the **note_list_tile.dart** file, and we will use it to display the values of the **notes** list.
+> > a. The **ListView.builder** requires two named arguments: The first one is **itemCount** which takes the length of the **notes** list, and the second one is `itemBuilder` which returns a widget.
+> > b. The **itemBuilder** returns the **NoteListTile** widget which comes from the **note_list_tile.dart** file and is used to display the values of the **notes** list.
 
-3. Don’t forget to import **note_list_tile.dart** since we used it inside the **ListView** widget.
+6. Import **note_list_tile.dart**.
 
    ```dart
    import '../widgets/note_list_tile.dart';
    ```
 
-4. We will get an Exception because we used the **ListView** widget inside the **Column** widget.
+⚠️ You got an `Exception` because you used the **ListView** widget inside the **Column** widget.
 
-   ![img](https://lh3.googleusercontent.com/jJ0mvg2hp6Sas7NpTeh72SZxstoXyk7UQXR6RKsAbR4imKbg7LRP9-F-ct7qeuDLLYbteDhrQ1nfCofxeUALpcoACmKB-hznCKfQZL1p-5onJD9ROwAl5CGlU6-pqmjNeupGgehB)
+![img](https://lh3.googleusercontent.com/jJ0mvg2hp6Sas7NpTeh72SZxstoXyk7UQXR6RKsAbR4imKbg7LRP9-F-ct7qeuDLLYbteDhrQ1nfCofxeUALpcoACmKB-hznCKfQZL1p-5onJD9ROwAl5CGlU6-pqmjNeupGgehB)
 
-To solve this issue, add **shrinkWrap** named argument inside the ListView widget, and keep its value to true. This named augment will change the behavior of the ListView widget, so it has a fixed height, and the error will disappear.
+To solve this issue, you have to add the **shrinkWrap** named argument inside the `ListView` widget. This named augment changes the behavior of the `ListView` widget to have a fixed height.
+
+7. Add the **shrinkWrap** named argument inside the `ListView` widget, and set its value to true.
+8.
 
 ```dart
 ListView.builder(
-
-                  shrinkWrap: true, // <- here
-                  itemCount: notes.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return NoteListTile(
-                      note: notes[index],
-                    );
-                  },
-                )
+                shrinkWrap: true, // <- here
+                itemCount: notes.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return NoteListTile(
+                    note: notes[index],
+                  );
+                },
+              )
 ```
 
-Also, add `physics: const NeverScrollableScrollPhysics(),` named argument. This named argument will disable the scroll inside the **ListView** because the scroll will come from its parent widget which is the **SingleChildScrollView**.
+8. Add `physics: const NeverScrollableScrollPhysics(),` named argument to disable the scrolling inside the **ListView**.
 
 ```dart
  ListView.builder(
@@ -94,29 +96,25 @@ Also, add `physics: const NeverScrollableScrollPhysics(),` named argument. This 
                 )
 ```
 
-10. After completing the additional logic, we need to link this additional logic with the add button widget.
+9. Pass the `addNote()` function to the `onPressed` button in the `IconButton`:
 
-    So, change the **onPressed** named argument that inside the **IconButton** with
+   ```dart
+   IconButton(
+             iconSize: 32,
+             icon: Icon(
+               Icons.add_box,
+               color: Theme.of(context).primaryColor,
+             ),
+             onPressed: () {
+               addNote();  // <- Here
+             },
+           )
+   ```
 
-    ```dart
-    IconButton(
-                          iconSize: 32,
-                          icon: Icon(
-                            Icons.add_box,
-                            color: Theme.of(context).primaryColor,
-                          ),
-                          onPressed: () {
-                            addNote();  // <- Here
-                          },
-                        )
-    ```
+   ![img](https://lh5.googleusercontent.com/JuQllaI9HpwLkjkkAGhz9ua8R3TVA52vS_obpbf3pxpsjtihIsMBSPZFjemyha_0Pkj07cJIoINTKJgft8-xkrRnR46CoMerRi4IUrfqx3T82Zy8nNol2FUXrcZ50Qq891ci7tDd)
 
-    ![img](https://lh5.googleusercontent.com/JuQllaI9HpwLkjkkAGhz9ua8R3TVA52vS_obpbf3pxpsjtihIsMBSPZFjemyha_0Pkj07cJIoINTKJgft8-xkrRnR46CoMerRi4IUrfqx3T82Zy8nNol2FUXrcZ50Qq891ci7tDd)
-
-**Finally,**
+**Finally!**
 
 ![img](https://lh4.googleusercontent.com/VsX1QoUtpmsfmJ4lE1mtxQoRfJBNRYGfMxz1Ad3KUdAQkjq-pZTeezq0Q-RpO9ZTEV4-_ri1o-ayEF2geqYeFiGp8bII8oVnzKzVvcKxIvGiTMahCKXYRFH9ALwLAWqTb_qKlTIm)
 
-**Note: You can find the full source code.**
-
-> https://github.com/Northwest-content/flutter_notes_app/tree/main/notes_app
+**Note: You can find the full source code [here](https://github.com/Northwest-content/flutter_notes_app/tree/main/notes_app).**

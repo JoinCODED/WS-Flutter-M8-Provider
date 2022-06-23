@@ -1,27 +1,10 @@
-Because inside the note app, we have used a **ListView** widget and this widget displays the values of the **notes** variable. When the user adds a new note inside the **notes** variable, we need to rebuild the **ListView** widget again. Because of this reason we used the **notifyListeners()** method inside the **addNote** function that is inside the NoteProvider class.
+Since the **ListView** widget is used inside the note app to display the values of the **notes** variable, this widget has to rebuild itself every time the user adds a new note inside the **notes** variable. That is why we used the **notifyListeners()** method inside the **addNote** function in the **NoteProvider** class.
 
 ![img](https://lh6.googleusercontent.com/nC3U3-tpn1vQ5ONZgWJulQSRdMaN152lMFyfCaQ_FPN2eNVbLtD7_Yws53gNOPh-FFQoL8Tn6SHDYdeQhkb-xOp2GtAwEEZ80Zi5X7qR800YuEjI0_nvkz6S_2lSoyjydPRW5JCo)
 
-1.  Not only, we need to rebuild the widget tree, we also need to access the **notes** variable that is inside the **NoteProvider** class, and use it inside the **ListView** widget. So, the widget which will help us with accessing & rebuilding the widget tree is the **Consumer** widget.
+In addition to that, we need to access the **notes** variable that is inside the **NoteProvider** class, and use it inside the **ListView** widget.
 
-Cut the **ListView.builder**, then use the **Consumer** widget, and inside the builder named argument return & paste the **ListView.builder** that you cut before.
-
-```dart
-    Consumer<NoteProvider>(
-              builder: (context, notesProvider, child) => ListView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(), // <- Here
-                itemCount: notes.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return NoteListTile(
-                    note: notes[index],
-                  );
-                },
-              ),
-            )
-```
-
-21. Since we are using the **notes** variable inside the **ListView** widget, we will use the **notesProvider** argument
+11. Cut the **ListView.builder**, then use the **Consumer** widget, and inside the builder named argument return & paste the **ListView.builder** that you cut before.
 
 ```dart
     Consumer<NoteProvider>(
@@ -38,9 +21,9 @@ Cut the **ListView.builder**, then use the **Consumer** widget, and inside the b
             )
 ```
 
-> **Note:** the **notifyListeners()** method will rebuild the widget tree that the **Consumer** widget returns when it's called.
+> **Note:** The **notifyListeners()** method will rebuild the widget tree that the **Consumer** returns when it is called.
 
-Alternatively, you can use `context.watch` to access the provider. and watch for changes, like this:
+Alternatively, you can use `context.watch` to access the provider, and watch the changes:
 
 ```dart
     context.watch<NoteProvider>().notes
@@ -61,5 +44,3 @@ So our code will look like this:
               )
 
 ```
-
-And we can remove the **Consumer** widget, and use the **context.watch** method instead.
