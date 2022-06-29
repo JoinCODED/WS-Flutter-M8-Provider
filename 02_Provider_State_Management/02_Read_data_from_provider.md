@@ -1,11 +1,11 @@
 To use these data inside the **home_page.dart** file, you need to import the **provider** package, and the **NoteProvider**.
 
 ```dart
-import 'package:notes_app/providers/note_provider.dart';
+import 'package:flutter_notes_app_starter/providers/note_provider.dart';
 import 'package:provider/provider.dart';
 ```
 
-10. Use the **provider.of** method the **home_page.dart** file to call the **addNote** function from the **note_provider.dart** file:
+10. Use the **provider.of** method in the **home_page.dart** file to call the **addNote** function from the **note_provider.dart** file:
 
 ```dart
 IconButton(

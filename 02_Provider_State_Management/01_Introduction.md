@@ -92,7 +92,7 @@ After that, we have to use `ChangeNotifierProvider` which is the widget that pro
 
 ```dart
 import 'package:provider/provider.dart';
-import 'package:notes_app/providers/note_provider.dart';
+import 'package:flutter_notes_app_starter/providers/note_provider.dart';
 
 
 
