@@ -16,7 +16,7 @@ We will learn how to use:
 
 1. Download the starter project from GitHub, then open the project by using the VS Code, and get the packages.
 
-> https://github.com/Northwest-content/flutter_notes_app_starter
+> https://github.com/JoinCODED/flutter_notes_app_starter
 
 2. Inside the project, we will have three folders,
    1. **models**, inside this folder we created a **Note** model, and it has three values; **id** value, **title** value & **body** value.
